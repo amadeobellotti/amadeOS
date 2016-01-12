@@ -35,7 +35,7 @@ _start:
 	call kernel_main
 
 	# Hang if kernel_main unexpectedly returns.
-	cli
+	#cli
 .Lhang:
 	hlt
 	jmp .Lhang

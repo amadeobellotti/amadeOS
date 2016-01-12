@@ -5,6 +5,7 @@
 
 #include <stddef.h>
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -14,7 +15,8 @@ void* memcpy(void* __restrict, const void* __restrict, size_t);
 void* memmove(void*, const void*, size_t);
 void* memset(void*, int, size_t);
 size_t strlen(const char*);
-
+char* itoa(int,char*,int);
+char* uitoa(long unsigned int,char*,int);
 #ifdef __cplusplus
 }
 #endif

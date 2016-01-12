@@ -5,6 +5,7 @@
 
 static void print(const char* data, size_t data_length)
 {
+
 	for ( size_t i = 0; i < data_length; i++ )
 		putchar((int) ((const unsigned char*) data)[i]);
 }
@@ -56,6 +57,29 @@ int printf(const char* restrict format, ...)
 			format++;
 			const char* s = va_arg(parameters, const char*);
 			print(s, strlen(s));
+		}
+		else if ( *format == 'd' || *format == 'i')
+		{
+			format++;
+			int i = va_arg(parameters,int);
+			char* s="alllofthejunkfuck";
+			s = itoa(i,s,10);
+			print(s,strlen(s));
+		}
+		else if ( *format == 'u' )
+		{
+			format++;
+			unsigned int i = (long unsigned int) va_arg(parameters,long unsigned int);
+			char* s = "alllofthejunkfuck";
+			s = uitoa(i,s,10);
+			print(s,strlen(s));
+		}else if ( *format == 'x')
+		{
+			format++;
+			long unsigned int i = (long unsigned int) va_arg(parameters,long unsigned int);
+			char* s = "alllofthejunkfuck";
+			s = uitoa(i,s,16);
+			print(s,strlen(s));
 		}
 		else
 		{

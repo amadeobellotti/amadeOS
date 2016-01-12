@@ -13,9 +13,9 @@ INCLUDEDIR?=$(PREFIX)/include
 LIBDIR?=$(EXEC_PREFIX)/lib
 
 CFLAGS:=$(CFLAGS) -Wall -Wextra
-CPPFLAGS:=$(CPPFLAGS) -D__is_myos_libc -Iinclude
+CPPFLAGS:=$(CPPFLAGS) -D__is_amadeos_libc -Iinclude
 LIBK_CFLAGS:=$(CFLAGS) -ffreestanding -fbuiltin
-LIBK_CPPFLAGS:=$(CPPFLAGS) -D__is_myos_kernel
+LIBK_CPPFLAGS:=$(CPPFLAGS) -D__is_amadeos_kernel
 
 ARCHDIR:=arch/$(HOSTARCH)
 
@@ -37,6 +37,7 @@ string/memcpy.o \
 string/memmove.o \
 string/memset.o \
 string/strlen.o \
+string/itoa.o \
 
 HOSTEDOBJS:=\
 $(ARCH_HOSTEDOBJS) \
